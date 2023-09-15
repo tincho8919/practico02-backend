@@ -68,7 +68,33 @@ app.get('/registro', (req, res) => {
 // Ruta para procesar el formulario de registro
 app.post('/registro', (req, res) => {
     // Procesar los datos del formulario aquí
+    const { nombre, apellido, email , password } = req.body;
+    
+    console.log('===================================');
 
+    console.log(nombre);
+    console.log(apellido);
+    console.log(email);
+    console.log(password);
+
+    console.log('===================================');
+    
+    let datoNombre = req.body.nombre;
+    let datoApellido = req.body.apellido;
+    let datoEmail = req.body.email;
+    let datoPassword = req.body.password;
+    
+    console.log('===================================');
+    
+    console.log(datoNombre);
+    console.log(datoApellido);
+    console.log(datoEmail);
+    console.log(datoPassword);
+    
+    console.log('===================================');
+
+    res.send(`Hemos recibido tus datos -nombre: ${nombre} -apellido: ${apellido} -correo: ${email} -contraseña: ${password}`);
     // Redirige al usuario a la página de bienvenida después del registro exitoso
     res.redirect('nuevouser.html');
 });
+
